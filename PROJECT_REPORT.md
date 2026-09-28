@@ -6,7 +6,6 @@
 - **Course/Subject:** VITyarthi Project
 - **Student Name:** AAYUSHI SINGH
 - **Registration Number:** 26BCE10040
-- **Submission Date:** 30th September
 - **Repository Link:** https://github.com/dovexmoon/hangman
 
 ---
