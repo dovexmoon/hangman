@@ -14,19 +14,19 @@ for the  workflow.
 
 ## Features
 
--> Random word selection 
--> Duplicate guess prevention using a `set` of guessed letters
--> Single alphabetic characters only
--> Live hangman drawing that updates with each wrong guess
--> Clear checking of win or loss and replay flow
--> Unit tests covering word selection and win/loss logic
--> Limited number if attempts
+* Random word selection
+* Duplicate guess prevention using a `set` of guessed letters
+* Single alphabetic characters only
+* Live hangman drawing that updates with each wrong guess
+* Clear checking of win or loss and replay flow
+* Unit tests covering word selection and win/loss logic
+* Limited number if attempts
 
 ## Technologies / Tools Used
 
--> Python 3
--> random module
--> Python set data structure
+* Python 3
+* random module
+* Python set data structure
 
 ## Project Structure
 
