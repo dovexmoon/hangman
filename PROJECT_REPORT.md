@@ -2,12 +2,12 @@
 
 ## 1. Cover Page
 
-**Project Title:** Hangman Word Guessing Game
-**Course/Subject:** VITyarthi Project
-**Student Name:** AAYUSHI SINGH
-**Registration Number:** 26BCE10040
-**Submission Date:** 30th September
-**Repository Link:** https://github.com/dovexmoon/hangman
+- **Project Title:** Hangman Word Guessing Game
+- **Course/Subject:** VITyarthi Project
+- **Student Name:** AAYUSHI SINGH
+- **Registration Number:** 26BCE10040
+- **Submission Date:** 30th September
+- **Repository Link:** https://github.com/dovexmoon/hangman
 
 ---
 
