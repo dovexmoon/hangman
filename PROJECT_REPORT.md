@@ -2,131 +2,90 @@
 
 ## 1. Cover Page
 
-**Project Title:** Hangman Word-Guessing Game
-**Course/Subject:** [Insert your subject name here]
-**Student Name:** [Insert your name here]
-**Registration/Roll Number:** [Insert here]
-**Submission Date:** [Insert here]
-**Repository Link:** [Insert your GitHub repository URL here]
+**Project Title:** Hangman Word Guessing Game
+**Course/Subject:** VITyarthi Project
+**Student Name:** AAYUSHI SINGH
+**Registration Number:** 26BCE10040
+**Submission Date:** 30th September
+**Repository Link:** https://github.com/dovexmoon/hangman
 
 ---
 
 ## 2. Introduction
 
-Hangman is a classic word-guessing game in which a player tries to
-identify a hidden word by guessing one letter at a time, with a
-limited number of incorrect guesses allowed before losing. This
-project implements Hangman as a console-based Python application. It
-was chosen as a project topic because it naturally requires several
-core programming concepts — random selection, unique-value tracking,
-string processing, and iterative control flow — to work together in
-a single, easily demonstrable program.
+Hangman is a game where the player guesses a hidden word one letter at a time. Each wrong guess adds a body part to a hanging man, and the player loses when the drawing is complete. This project builds the game in Python and runs in the terminal.
 
 ## 3. Problem Statement
 
-Learners often study programming concepts such as modules, sets,
-strings, and loops in isolation, without a small, complete
-application that shows them working together toward one goal. This
-project addresses that gap by building an interactive word-guessing
-game that requires all four concepts to function correctly, giving a
-concrete, testable demonstration of each one. Full details, scope,
-and target users are documented separately in
-[`statement.md`](../statement.md).
+Beginners learn modules, sets, strings and loops separately and rarely see them working together. This project uses one small, fun game to show all four in a single working program. More detail is in ['statement.md.'] statement.md
 
 ## 4. Functional Requirements
 
 The system is organized around three major functional modules:
 
 1. **Word Selection & Game Setup**
-   - Input: a fixed in-code word list.
-   - Output: one randomly chosen secret word and a freshly
-     initialized game state (empty guessed-letter set, full attempt
+   * Input: A fixed word list in code.
+   * Output: One randomly chosen secret word and a new game state (blanks for guessing letter set, full attempt
      count).
-   - Implemented by `choose_word()` and the setup portion of
+   * Implemented by `choose_word()` and the setup portion of
      `play_game()`.
 
 2. **Guess Processing & Validation**
-   - Input: raw keyboard input from the player.
-   - Output: a confirmed, valid, previously-unused letter added to
-     the guessed-letter set; or a re-prompt on invalid input.
-   - Implemented by `get_valid_guess()`.
+   * Input: Keyboard input from the player.
+   * Output: A confirmed, valid, previously unused letter added to
+     the blank set; or reprompt on invalid input.
+   * Implemented by `get_valid_guess()`.
 
 3. **Progress Display & Outcome Reporting**
-   - Input: current secret word, guessed letters, and attempts left.
-   - Output: the ASCII hangman drawing, masked word, guessed-letter
+   * Input: current secret word, guessed letters, and attempts left.
+   * Output: the hangman drawing, masked word, guessed letter
      list, attempts remaining, and the final win/loss message.
-   - Implemented by `display_state()`, `is_word_guessed()`, and the
+   * Implemented by `display_state()`, `is_word_guessed()`, and the
      reporting portion of `play_game()`.
 
-The user workflow is: **launch → guess repeatedly → see progress
-after every guess → win or lose → optionally play again.** This
+The user workflow is: **launch -> guess repeatedly -> see progress
+after every guess -> win or lose -> optionally play again.** This
 workflow is documented visually in
-[`docs/diagrams.md`](../docs/diagrams.md) (Section 2, Process/Workflow
-Diagram).
+[`docs/diagrams.md`](../docs/diagrams.md).
 
 ## 5. Non-Functional Requirements
 
 | # | Requirement | How it's addressed |
 |---|---|---|
-| 1 | **Usability** | Clear prompts, a visible progress display after every turn, and plain-language error messages for invalid input. |
-| 2 | **Reliability** | The game loop's exit condition (`attempts_left > 0 and not is_word_guessed(...)`) guarantees the program always terminates in a win or loss state — no infinite loops or undefined states. |
-| 3 | **Error Handling** | `get_valid_guess()` rejects empty input, multi-character input, non-alphabetic characters, and repeated guesses, re-prompting instead of crashing. |
-| 4 | **Maintainability** | Logic is split into small, single-purpose functions with docstrings, making the code easy to read, test, and extend. |
-| 5 | **Performance** | Guessed-letter lookups use a `set`, giving O(1) membership checks regardless of word length. |
-| 6 | **Resource Efficiency** | No external dependencies, network calls, or persistent storage — the program has a minimal memory and runtime footprint. |
+| 1 | **Usability** | Clear prompts, a visible progress display after every turn, and plain language error messages for invalid input. |
+| 2 | **Reliability** | The game loop's exit condition (`attempts_left > 0 and not is_word_guessed(...)`) guarantees the program always terminates in a win or loss state , no infinite loops or undefined states. |
+| 3 | **Error Handling** | `get_valid_guess()` rejects empty input, multicharacter input, non alphabetic characters, and repeated guesses, reprompting instead of crashing. |
+| 4 | **Maintainability** | Logic is split into small, single purpose functions with docstrings, making the code easy to read, test, and extend. |
+| 5 | **Performance** | Guessed letter lookups use a `set`, giving O(1) membership checks regardless of word length. |
+| 6 | **Resource Efficiency** | No external dependencies, network calls, or persistent storage :the program has a minimal memory and runtime footprint. |
 
 ## 6. System Architecture
 
-The application is a single-process console program with no external
-services, database, or network layer. It consists of an application
-layer (word bank, game engine, input validator, display renderer,
-win/loss checker) built on top of Python's standard library
-(`random`, `string`). See the full **System Architecture Diagram** in
-[`docs/diagrams.md`](../docs/diagrams.md), Section 1.
+This is a standalone Python console game. It runs entirely offline without internet or databases. It uses standard Python tools to power five core modules: a word bank, game engine, input validator, display renderer, and win/loss checker. For a full visual layout, check the System Architecture Diagram in 
+[`docs/diagrams.md`](../docs/diagrams.md),.
 
 ## 7. Design Diagrams
 
-All diagrams are provided as Mermaid diagrams in
+All diagrams are provided as flowchart diagram in
 [`docs/diagrams.md`](../docs/diagrams.md):
 
-- Section 1 — System Architecture Diagram
-- Section 2 — Process / Workflow Diagram
-- Section 3 — Use Case Diagram
-- Section 4 — Class / Component Diagram
-- Section 5 — Sequence Diagram
-- Section 6 — Database/Storage Design (marked not applicable, with
-  justification, since the game uses only in-memory state)
+* Workflow Diagram
+* Use Case Diagram
+* Sequence Diagram
+* Class / Component Diagram
 
 ## 8. Design Decisions & Rationale
 
-- **Function-based design over classes:** the game has a single
-  "session" of state at a time and no need for multiple instances or
-  inheritance, so plain functions keep the implementation simpler
-  and easier to follow than a class hierarchy would.
-- **`set` for guessed letters:** chosen over a `list` because guesses
-  must be unique and membership needs to be checked on every input —
-  a set gives both properties for free with O(1) lookups.
-- **In-code word list instead of a file/API:** keeps the project
-  fully self-contained with zero setup friction and no network
-  dependency, appropriate for the project's scope (see
-  `statement.md`).
-- **Single loop condition for win/loss:** combining
-  `attempts_left > 0` and `not is_word_guessed(...)` into one `while`
-  condition avoids duplicated exit checks scattered through the code.
+* Set for guessed letters: it stops duplicates and checks quickly.
+* Word list inside the code: no setup or internet is needed.
+* Functions instead of classes: the game is small, so functions are simpler.
 
 ## 9. Implementation Details
 
-- **Modules:** `random.choice()` selects the secret word;
-  `string.ascii_lowercase` validates guesses.
-- **Sets:** `guessed_letters` is a `set`; win detection uses set
-  comparison (`set(secret_word) <= guessed_letters`).
-- **Strings:** the masked word is built with a generator expression
-  joined by `" "`, substituting `_` for unrevealed letters; all
-  input is normalized with `.strip().lower()`.
-- **Loops:** the `while` loop in `play_game()` drives each round; a
-  `while True` loop in `get_valid_guess()` re-prompts until valid
-  input is received; an outer `while True` loop in `main()` supports
-  replaying multiple rounds.
+* Modules: random.choice() picks the word, and string.ascii_lowercase checks input.
+* Sets: guessed_letters stores guesses, and the win check compares the word's letters with this set.
+* Strings: the word is shown with _ for unknown letters.
+* Loops: a while loop runs each round until the word is guessed or attempts reach 0.
 
 The unchanged source code is in [`src/hangman.py`](../src/hangman.py).
 
@@ -178,7 +137,7 @@ Guessed letters: a, p
 Attempts left: 5
 ```
 
-*(Full run truncated for brevity — see `tests/test_hangman.py` output
+*(Full run truncated for shortness — see `tests/test_hangman.py` output
 below for the automated verification.)*
 
 ## 11. Testing Approach
@@ -186,62 +145,28 @@ below for the automated verification.)*
 Testing combined automated unit tests with manual/scripted
 verification:
 
-- **Automated unit tests** (`tests/test_hangman.py`, run via
-  `python3 -m unittest discover -s tests -v`): 8 tests covering word
-  bank integrity, random selection validity, and win-condition
-  detection across multiple scenarios. All 8 tests pass.
-- **Static validation:** the source was parsed with Python's `ast`
-  module to confirm there are no syntax errors.
-- **Scripted playthrough simulation:** the game was run with piped
-  input simulating full guess sequences to confirm the hangman
-  drawing progresses correctly, attempts decrement accurately, and
-  win/loss messages display the correct word.
-- **Manual input-validation review:** confirmed that duplicate
-  guesses, non-letter characters, and multi-character input are
-  rejected with a re-prompt rather than consuming an attempt or
-  crashing.
+- **Automated unit tests**
+8 unit tests in tests/test_hangman.py
+check the word list, word selection and win detection. All pass.
+Run them with: python3 -m unittest discover -s tests -v
+The game was also played manually, including wrong, repeated and invalid inputs.
 
 ## 12. Challenges Faced
-
-- Deciding how to represent "all letters guessed" cleanly led to
-  using set comparison (`set(secret_word) <= guessed_letters`)
-  instead of a manual loop, which simplified `is_word_guessed()`
-  considerably.
-- Balancing input validation strictness (rejecting bad input) against
-  usability (not being overly restrictive or confusing) required
-  iterating on the error messages in `get_valid_guess()`.
-- Representing UML diagrams for a function-based (not class-based)
-  program required adapting the Class/Component and Use Case diagrams
-  to fit Mermaid's available diagram types.
-
+* Checking if the whole word is guessed: solved with a set comparison.
+* Handling bad input without crashing: solved with a validation loop
 ## 13. Learnings & Key Takeaways
 
-- Sets are a natural fit whenever "has this been seen before?" needs
-  to be answered repeatedly and efficiently.
-- Structuring even a small program into single-purpose functions
-  makes it dramatically easier to unit test in isolation.
-- Writing the workflow diagram before finalizing the report clarified
-  a couple of edge cases (e.g., what happens on the exact last
-  attempt) that were already handled correctly by the loop condition,
-  but hadn't been explicitly reasoned through beforehand.
+* Sets are ideal for tracking unique items.
+* Small functions are easier to test.
+* Planning the workflow first makes coding easier.
 
 ## 14. Future Enhancements
 
-- Support word categories or difficulty levels.
-- Add a persistent scoring/high-score system (would introduce a
-  simple storage schema — see `docs/diagrams.md`, Section 6).
-- Load the word list from an external file for easier customization
-  without editing code.
-- Add a hint system (e.g., reveal a letter for a score penalty).
-- Build a graphical or web-based front end.
+* Difficulty levels or word categories
+* High-score saving
+* A hint feature
+* A graphical version
 
 ## 15. References
 
-- Python Software Foundation. *`random` — Generate pseudo-random
-  numbers.* Python 3 documentation.
-- Python Software Foundation. *`string` — Common string operations.*
-  Python 3 documentation.
-- Python Software Foundation. *`unittest` — Unit testing framework.*
-  Python 3 documentation.
-- Mermaid. *Mermaid Diagramming and charting tool.*
-  https://mermaid.js.org/
+Python documentation: random, string, unittest (docs.python.org)
