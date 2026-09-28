@@ -2,50 +2,30 @@
 
 ## Problem Statement
 
-Learning to code is often abstract — beginners read about loops, sets,
-and modules without a tangible way to see them work together. There
-is a need for a small, self-contained, interactive program that
-demonstrates these core Python concepts in a way that is genuinely
-fun to use rather than a dry syntax exercise. Hangman is a well-known
-word-guessing game that naturally requires random selection, unique
-state tracking, string manipulation, and repeated user interaction —
-making it a strong practical vehicle for demonstrating these
-concepts end-to-end.
+Beginners often learn modules, sets, strings and loops separately and rarely see them work together. This project builds a Hangman word guessing game in Python that uses all four in one small, interactive program.
 
 ## Scope of the Project
 
-This project implements a **single-player, console-based Hangman
-game** in Python. It is scoped to:
+A single player, terminal based Hangman game with:
+* Random word selection from a inbuilt list
+* Turn based letter guessing with instant feedback
+* An ASCII hangman drawing that grows with each wrong guess
+* A "play again" option
 
-- Word selection from a fixed, in-code word list (no external
-  dictionary/API).
-- Turn-based letter guessing with immediate feedback.
-- Visual (ASCII) representation of the hangman's progress.
-- Replayability within a single program run.
+ ( Not included: multiplayer, saved scores, a graphical interface, or online word sources.)
 
-**Out of scope:** multiplayer support, persistent score storage
-across sessions, a graphical user interface, and network/API-based
-word sources. These are listed as future enhancements rather than
-current features.
+
 
 ## Target Users
 
-- Students learning Python fundamentals (modules, sets, strings,
-  loops, functions).
-- Instructors/evaluators who want a compact, readable example of
-  these concepts applied together.
-- Casual users who want a quick, dependency-free word game to run
-  from a terminal.
+* Students learning Python basics
+* Instructors or evaluators reviewing a simple, readable example
+* Anyone wanting a quick game to play in the terminal
+  
+## High Level Features
 
-## High-Level Features
-
-- Random secret word selection on every round (`random` module).
-- Duplicate-guess prevention using a `set` of guessed letters.
-- Input validation restricted to single alphabetic characters
-  (`string` module).
-- Live progress display: masked word, guessed letters, attempts
-  remaining, and an ASCII hangman drawing.
-- Win/loss detection driven by a `while` loop over remaining
-  attempts.
-- "Play again" flow to run multiple rounds without restarting the
-  program.
+* Random secret word each round (random)
+* No repeated guesses, tracked with a set
+* Input check for single letters only (string)
+* Live display of the word, guessed letters and attempts left
+* Win/loss detection using a while loop
