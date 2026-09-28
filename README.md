@@ -81,7 +81,7 @@ You will see 8 tests pass, covering:
 
 ## Screenshots
 
-Refer `PROJECT_REPORT.md`  **Screenshots / Results** for a captured
+Refer `PROJECT_REPORT.md`  **Results** for a captured
 sample terminal run .
 
 ## Author
