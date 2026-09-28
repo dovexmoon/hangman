@@ -45,8 +45,8 @@ hangman-project/
 
 ## Requirements
 
--> Python 3.7 or later
--> Standard library only
+* Python 3.7 or later
+* Standard library only
 
 
 ###  How to play
