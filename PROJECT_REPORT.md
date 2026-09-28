@@ -145,10 +145,10 @@ Testing combined automated unit tests with manual/scripted
 verification:
 
 - **Automated unit tests**
-8 unit tests in tests/test_hangman.py
-check the word list, word selection and win detection. All pass.
-Run them with: python3 -m unittest discover -s tests -v
-The game was also played manually, including wrong, repeated and invalid inputs.
+* 8 unit tests in tests/test_hangman.py
+* check the word list, word selection and win detection. All pass.
+* Run them with: python3 -m unittest discover -s tests -v
+* The game was also played manually, including wrong, repeated and invalid inputs.
 
 ## 12. Challenges Faced
 * Checking if the whole word is guessed: solved with a set comparison.
