@@ -72,12 +72,12 @@ python3 -m unittest discover -s tests -v
 ```
 
 You will see 8 tests pass, covering:
--> Word bank integrity (non-empty, lowercase, alphabetic)
--> Random word selection returning a valid word
--> Win-condition detection (`is_word_guessed`) under multiple
+* Word bank integrity (non-empty, lowercase, alphabetic)
+* Random word selection returning a valid word
+* Win-condition detection (`is_word_guessed`) under multiple
   scenarios (full match, partial match, empty guesses, extra
   irrelevant guesses)
--> Configuration sanity (`MAX_ATTEMPTS` is positive)
+* Configuration sanity (`MAX_ATTEMPTS` is positive)
 
 ## Screenshots
 
