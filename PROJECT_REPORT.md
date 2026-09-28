@@ -52,12 +52,11 @@ workflow is documented visually in
 
 | # | Requirement | How it's addressed |
 |---|---|---|
-| 1 | **Usability** | Clear prompts, a visible progress display after every turn, and plain language error messages for invalid input. |
-| 2 | **Reliability** | The game loop's exit condition (`attempts_left > 0 and not is_word_guessed(...)`) guarantees the program always terminates in a win or loss state , no infinite loops or undefined states. |
-| 3 | **Error Handling** | `get_valid_guess()` rejects empty input, multicharacter input, non alphabetic characters, and repeated guesses, reprompting instead of crashing. |
-| 4 | **Maintainability** | Logic is split into small, single purpose functions with docstrings, making the code easy to read, test, and extend. |
-| 5 | **Performance** | Guessed letter lookups use a `set`, giving O(1) membership checks regardless of word length. |
-| 6 | **Resource Efficiency** | No external dependencies, network calls, or persistent storage :the program has a minimal memory and runtime footprint. |
+| 1 | **Usability** | 	Clear prompts and a display after every guess. |
+| 2 | **Reliability** | The game always ends in a win or a loss. |
+| 3 | **Error Handling** | Invalid or repeated input is rejected and asked again. |
+| 4 | **Maintainability** |Small functions with comments. |
+| 5 | **Performance** | 	A set gives fast checks for guessed letters. |
 
 ## 6. System Architecture
 
