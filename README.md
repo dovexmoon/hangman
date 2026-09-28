@@ -84,15 +84,7 @@ You will see 8 tests pass, covering:
 Refer `PROJECT_REPORT.md`  **Screenshots / Results** for a captured
 sample terminal run .
 
-## Version Control
+## Author
 
-This project is structured to be tracked with Git:
+AAYUSHI SINGH
 
-```bash
-git init
-git add .
-git commit -m "Initial commit: Hangman game with docs and tests"
-```
-
-A `.gitignore` is included in this project to keep virtual environments and cache
-files out of version control.
