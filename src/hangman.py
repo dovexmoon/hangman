@@ -111,7 +111,7 @@ def play_game():
     attempts_left = MAX_ATTEMPTS
 
     print("=" * 40)
-    print("   WELCOME TO HANGMAN")
+    print("WELCOME TO HANGMAN ✌️")
     print("=" * 40)
     print(f"The word has {len(secret_word)} letters. Good luck!\n")
 
@@ -141,7 +141,7 @@ def main():
         play_game()
         again = input("\nPlay again? (y/n): ").strip().lower()
         if again != "y":
-            print("Thanks for playing Hangman. BYE!")
+            print("Thanks for playing Hangman.👋🏻BYE!")
             break
         print()
 
