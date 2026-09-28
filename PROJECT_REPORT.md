@@ -87,7 +87,7 @@ All diagrams are provided as flowchart diagram in
 
 The unchanged source code is in [`src/hangman.py`](../src/hangman.py).
 
-## 10. Screenshots / Results
+## 10. Results
 
 This is a console application, so results are shown as captured
 terminal output rather than graphical screenshots:
