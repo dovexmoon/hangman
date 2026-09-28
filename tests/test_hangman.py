@@ -2,10 +2,9 @@ import os
 import sys
 import unittest
 
-# Make src/hangman.py importable without altering hangman.py itself
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "src"))
 
-from hangman import (  # noqa: E402
+from hangman import (  
     WORDS,
     MAX_ATTEMPTS,
     choose_word,
@@ -23,7 +22,7 @@ class TestWordBank(unittest.TestCase):
             self.assertEqual(word, word.lower())
 
     def test_choose_word_returns_word_from_list(self):
-        for _ in range(20):  # sample multiple times since it's random
+        for _ in range(20): 
             word = choose_word(WORDS)
             self.assertIn(word, WORDS)
 
@@ -45,7 +44,6 @@ class TestWinCondition(unittest.TestCase):
         self.assertFalse(is_word_guessed(secret, guessed))
 
     def test_is_word_guessed_ignores_extra_guessed_letters(self):
-        # Guessing extra, irrelevant letters shouldn't break detection
         secret = "cat"
         guessed = {"c", "a", "t", "z", "q"}
         self.assertTrue(is_word_guessed(secret, guessed))
